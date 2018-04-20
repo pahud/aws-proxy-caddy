@@ -10,6 +10,12 @@
 
 
 
+![](aws-proxy-caddy-diagram.png)
+
+
+
+
+
 ## Demo
 
 cURL the API Gateway regional endpoint from Singapore region to Oregon region could take up to 720ms:
