@@ -1,0 +1,22 @@
+0.0.0.0
+browse
+
+proxy /prod/greetings https://8ucdb5oms4.execute-api.us-west-2.amazonaws.com {
+	#policy name [value]
+	#fail_timeout duration
+	#max_fails integer
+	#max_conns integer
+	#try_duration duration
+	#try_interval duration
+	header_upstream Host 8ucdb5oms4.execute-api.us-west-2.amazonaws.com
+	#header_downstream name value
+	keepalive 20
+	#timeout duration
+	#without /prod
+	#except ignored_paths...
+	#upstream to
+	#insecure_skip_verify
+	#transparent
+}
+log stdout
+errors stdout
