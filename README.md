@@ -5,7 +5,7 @@
 **aws-proxy-caddy** is a reference architecture built on top of AWS cross-regional VPC peering to accelerate cross-regional HTTPS traffic and ensure the traffic go through AWS backbone. It has some benefits:
 
 - All traffic go through AWS regional VPC peering with underlying HA and encryption
-- Internal facing http proxy service with [Caddy](https://caddyserver.com/) - a very robust web server written with Golang.
+- Internal facing http proxy service with [Caddy](https://caddyserver.com/) - a very robust web server written in Golang.
 - Reduced HTTPS RTT overhead - all HTTPS RTT within the same AWS region. No cross-regional HTTPS traffic.
 
 
@@ -29,7 +29,7 @@ $ curl https://8ucdb5oms4.execute-api.us-west-2.amazonaws.com/prod/greetings -w 
 However, if you cURL with aws-proxy-caddy via the regional VPC-peering, it would be around 331ms, which is  **54%** improvement in speed.
 
 ```
-$ curl http://10.0.1.23:2015/prod/greetings -w '\n==> %{time_total} spent'
+$ curl http://10.0.1.23/prod/greetings -w '\n==> %{time_total} spent'
 <h1>Hello, AWS!</h1>
 ==> 0.331145 spent
 ```
